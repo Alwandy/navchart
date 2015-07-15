@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!-- 
+Navigation chart lite version by Julian Alwandy, the interface is designed to give a overview of radio charts around Korea map, its designed for BMS.
+Any issues, tell Alwandy on UO forums
+Thank you Verox for fixing it and cleaning! 
+ -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Navigation & Command Chart viewer</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+			<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+<div class="container">
+		<div class="panel panel-default">
+		<div class="panel-heading">
+		<h3 class="panel-title">Navigation & Command Chart viewer</h3>
+		</div>
+		<div class="panel-body">
+<form>
+<div class="form-group">
+  <label for="airbase">Airfield</label> 
+  <select class="form-control" name="airbase">
+    <option>Select a airbase</option>
+	<option value="0">Kunsan Airport</option>
+	<option value="1">Chongju</option>
+	<option value="2">Choongwon</option>
+	<option value="3">Hoengsong</option>
+	<option value="4">Kangnung</option>
+	<option value="5">Kimhae</option>	
+    <option value="6">Kimpo</option>
+    <option value="7">Kwangju</option>
+    <option value="8">Osan</option>
+    <option value="9">Pohang</option>
+    <option value="10">Pusan</option>
+    <option value="11">P'Yong'Taeg</option>
+    <option value="12">Sachon</option>
+    <option value="13">Seoul</option>
+    <option value="14">Seosan</option>
+    <option value="15">Sokcho</option>
+    <option value="16">Suwon</option>
+    <option value="17">Taegu</option>
+    <option value="18">Yechon</option>
+    <option value="19">Chongwon</option>
+    <option value="20">Chunchon</option>
+    <option value="21">Kumi</option>
+    <option value="22">Mandumi</option>
+    <option value="23">R103</option>
+    <option value="24">R107</option>
+    <option value="25">R110</option>
+    <option value="26">R113</option>
+    <option value="27">R217</option>
+    <option value="28">R218</option>
+    <option value="29">R222</option>
+    <option value="30">R419</option>
+    <option value="31">R505</option>
+    <option value="32">R601</option>
+    <option value="33">R605</option>
+    <option value="34">Singal</option>
+    <option value="35">Songwhan</option>
+    <option value="36">Yongju</option>
+    <option value="37">Kotar</option>
+    <option value="38">Tactical Rng"</option>
+    <option value="39">Fukuoka</option>
+    <option value="40">Haeju</option>
+    <option value="41">Hwangju</option>
+    <option value="42">Hwangsuwon</option>
+    <option value="43">Hyon-Ni</option>
+    <option value="44">Iwon</option>
+    <option value="45">Kaech'on</option>
+    <option value="46">Koksan</option>
+    <option value="47">Kuum-ni</option>
+    <option value="48">Kwail</option>
+    <option value="49">Manp'o</option>
+    <option value="50">Mirim</option>
+    <option value="51">Onch'on</option>
+    <option value="52">Ongjin</option>
+    <option value="53">Orang</option>
+    <option value="54">Panghyon</option>
+    <option value="55">Pukchang-up</option>
+    <option value="56">Samjiyon</option>
+    <option value="57">Sondok</option>
+    <option value="58">Sunan</option>
+    <option value="59">Sunch'on</option>
+    <option value="60">T'aech'on</option>
+    <option value="61">Taetan</option>
+    <option value="62">Toksan</option>
+    <option value="63">Uiju</option>
+    <option value="64">Wonsan</option>
+    <option value="65">Ayang-Ni HS</option>
+    <option value="66">Hoeyang SE HS</option>
+    <option value="67">Ich'on Airstrip</option>
+    <option value="68">Kaech'on SW</option>
+    <option value="69">Kilchu HS</option>
+    <option value="70">Kojo HS</option>
+    <option value="71">Koksan HS</option>
+    <option value="72">Kwaksan</option>
+    <option value="73">Kyongsong</option>
+    <option value="74">Chuul"</option>
+    <option value="75">Nuch'on-Ni</option>
+    <option value="76">Okpyong-Ni</option>
+    <option value="77">Panghyon</option>
+    <option value="78">Pongsan</option>
+    <option value="79">Sangwon HS</option>
+    <option value="80">Sonch'on SW</option>
+    <option value="81">Sugam-Ni</option>
+    <option value="82">Taebukpo-Ri</option>
+    <option value="83">Tangch'on HS</option>
+    <option value="84">Yonghung HS</option>
+    <option value="85">Liuhe</option>
+    <option value="86">Shenyang</option>	
+    <option value="87">Nachodka</option>
+
+  </select>
+  <br>
+  		<div id="warnBox" class="bg-warning" style="display: none;">
+			This airfield is not defined.
+		</div>
+  </div>
+</form>
+		</div>
+		</div>
+		<div class="panel panel-default" id="mainbox" hidden>
+			<div class="panel-heading">
+			<h3 class="panel-title">Navigation chart - <span id="Airbase"></span></h3>
+			</div>
+			<div class="panel-body">
+
+				<table class="table">
+				<tr>
+					<th>TOWER FREQ</th>
+					<th>ILS</th>
+					<th>Runway</th>
+					<th>Elev</th>
+					<th>GPS Coord</th>
+				</tr>
+				<tr id="resultBox">
+					<td id="TowerFreq"></td>
+					<td id="ILS"></td>
+					<td id="Runway"></td>
+					<td id="Elev"></td>
+					<td id="GPS"></td>
+				</tr>
+				</table>
+			</div>
+		</div>
+		</div>
+		<center><footer>Designed and programmed by Julian Alwandy, thanks to bootstrap for their source template engine</footer></center>
+		</div>
+<script>
+var airports = [
+		<!--- Airport ID, Airport name, Tower Freq, ILS, Runway, Elevation, GPS ---> 
+		["0","Kunsan Airport","212.233", "110.3", "18/36", "10", "N35°58.39' E127°25.38"], 
+		["1","Chongju","250.2","111.7","05/23 L/R","187","N36°48.41' E128°36.74'"],
+		["2","Choongwon","230.15","111.3","16/34 L/R","642","N36°59.80' E129°08.78'"],
+		["3","Hoengsong","265.5","U.S.","18/36","580","N37°27.87' E129°13.75'"],
+		["4","Kangnung","334.9","111.5","08/26","51","N37°47.31' E130°29.77'"],
+		["5","Kimhae","233.3","109.5","16/34","39","N35°13.29' E130°11.66'"],
+		["6","Kimpo","240.9","109.9 (14L)/ 110.1 (14R)/ 108.3 (32L)/ 110.7 (32R)","14/32 L/R","96","N37°36.868' E127°42.801'"],
+		["7","Kwangju","254.6","111.1","02/20","110","N35°12.80' E127°39.97'"],
+		["8","Osan","308.8","111.3","09/27","97","N37°03.80' E128°00.83'"],
+		["9","Pohang","236.6","110.9","08/26","37","N36°02.88' E130°49.59'"],
+		["10","Pusan","232.4","109.5","14/32","579","N35°14.41' E130°28.96'"],
+		["11","P'Yong'Taeg","257.8","108.5","16/34","102","N36°57.87' E128°03.81'"],
+		["12","Sachon","305.4","111.5 (05L)/108.1 (23L)","05/23 L/R","139","N35°07.95' E129°09.96'"],
+		["13","Seoul","237.1","110.9","19/01/18/36","258","N37°26.97' E128°07.13'"],
+		["14","Seosan","353.1","111.5","02/20 L/R","26","N36°41.71' E127°19.74'"],
+		["15","Sokcho","236.6", "N/A","18/36","77","N38°06.84' E130°09.07'"],
+		["16","Suwon","366","108.5","14/32 L/R","167","N37°16.73' E127°57.15'"],
+		["17","Taegu","365","108.7","14/32","353","N35°58.41' E129°55.55'"],
+		["18","Yechon","269.5","109.3","08/26","491","N36°41.68' E129°40.93'"],
+		["19","Chongwon ","233.8/122.8","N/A","18/36","368","N36°37.39' E128°35.36'"],
+		["20","Chunchon ","233.8/122.8","N/A","18/36","383","N37°53.91' E128°56.79'"],
+		["21","Kumi","236.6/122.6","N/A","09/27","254","N36°12.61' E129°27.68'"],
+		["22","Mandumi","253.4/118.9","N/A","02/20","259","N38°04.45' E127°57.83'"],
+		["23","R103 ","236.6/122.6","N/A","09/27","135","N37°28.59' E127°38.72'"],
+		["24","R107","233.8/122.8", "N/A", "18/36","136","N37°46.37' E127°28.93'"],
+		["25","R110 ","233.8/122.8", "N/A", "18/36","68","N36°49.25' E127°39.68'"],
+		["26","R113","236.6/122.6","N/A","09/27","171","N37°43.13' E127°49.17'"],
+		["27","R217","233.8/122.8","N/A","18/36","455","N37°58.22' E128°18.86'"],
+		["28","R218","233.8/122.8","N/A","18/36","236","N38°03.61' E128°04.88'"],
+		["29","R222","233.8/122.8","N/A","18/36","360","N37°52.83' E128°06.19'"],
+		["30","R419","233.8/122.8","N/A","18/36","1063","N37°42.06' E129°12.87'"],
+		["31","R505","233.8/122.8","N/A","18/36","130","N36°37.39' E128°19.25'"],
+		["32","R601","306.8/125.3","N/A","09/27","666","N36°41.88' E129°26.52'"],
+		["33","R605","233.8/122.8","N/A","18/36","920","N37°10.80' E129°31.92'"],
+		["34","Singal","233.8/122.8","N/A","18/36","363","N37°19.42' E128°07.97'"],
+		["35","Songwhan","233.8/122.8","N/A","18/36","191","N36°54.64' E128°09.66'"],
+		["36","Yongju","233.8/122.8","N/A","18/36","589","N36°51.40' E129°55.17'"],
+		["37","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["38","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["39","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["40","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["41","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["42","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["43","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["44","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["45","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["46","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["47","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["48","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["49","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["50","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["51","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["52","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["53","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["54","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["55","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["56","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["57","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["58","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["59","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["60","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["61","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["62","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["63","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["64","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["65","Ayang-Ni HS","233.7/127.7","N/A","09/27","370","N38°18.16' E126°42.82'"],
+		["66","Hoeyang SE HS","233.7/127.7","N/A","09/27","1695","N38°47.26' E128°54.29'"],
+		["67","Ich'on Airstrip","233.7/127.7","N/A","09/27","1084","N38°36.48' E127°51.34'"],
+		["68","Kaech'on SW","231.4/123.4","N/A","18/36","516","N39°51.38' E126°37.25'"],
+		["69","Kilchu HS","231.4/123.4","N/A","18/36","448","N40°59.27' E131°18.62'"],
+		["70","Kojo HS","233.7/127.7","N/A","09/27","616","N38°52.11' E129°11.30'"],
+		["71","Koksan HS","231.4/123.4","N/A","18/36","1064","N38°47.80' E127°35.51'"],
+		["72","Kwaksan","233.7/127.7","N/A","09/27","301","N39°43.84' E125°44.30'"],
+		["73","Kyongsong Chuul","231.4/123.4","N/A","18/36","173","N41°35.92' E131°48.53'"],
+		["74","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["75","Nuchon-Ni","233.7/127.7","N/A","09/27","180","N38°16.54' E127°07.44'"],
+		["76","Okpyong-Ni","233.7/127.7","N/A","09/27","174","N39°19.59' E128°30.53'"],
+		["77","Panghyon","233.7/127.7","N/A","09/27","463","N39°56.23' E125°46.20'"],
+		["78","Pongsan","233.7/127.7","N/A","09/27","188","N38°32.17' E126°32.51'"],
+		["79","Sangwon HS","233.7/127.7","N/A","09/27","326","N38°53.18' E126°50.17'"],
+		["80","Sonch'on SW","233.7/127.7","N/A","09/27","281","N39°47.61' E125°19.20'"],
+		["81","Sugam-Ni","233.7/127.7","N/A","09/27","110","N41°46.15' E131°56.43'"],
+		["82","Taebukpo-Ri","233.7/127.7","N/A","09/27","458","N38°21.39' E127°46.20'"],
+		["83","Tangchon HS","233.7/127.7","N/A","09/27","196","N40°25.33' E130°36.18'"],
+		["84","Yonghung HS","233.7/127.7","N/A","09/27","22","N39°33.06' E128°32.99'"],
+		["85","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["86","N/A","N/A","N/A","N/A","N/A","N/A"],
+		["87","N/A","N/A","N/A","N/A","N/A","N/A"]
+		];
+		
+  function Airfield() {
+	var selected = "";
+	  
+    var fields = $( ":input" ).serializeArray();
+	
+	// Clear out the old results.
+	$( "#Airbase" ).empty();
+	$( "#resultBox" ).children().empty();
+	
+	$("#mainbox").fadeToggle();
+	$("#warnBox").hide();
+    jQuery.each( fields, function( i, field ) {
+	  selected = parseInt(field.value);
+	  
+		if (airports[selected] == undefined)
+		{
+			$("#warnBox").show();
+			return;
+		}
+	  $("#Airbase").append(airports[selected][1] + " ");
+	  $("#TowerFreq").append(airports[selected][2] + " ");
+	  $("#ILS").append(airports[selected][3] + " ");
+	  $("#Runway").append(airports[selected][4] + " ");
+	  $("#Elev").append(airports[selected][5] + " ");
+	  $("#GPS").append(airports[selected][6] + " ");
+	  $( "#mainbox" ).show("slow");
+    });
+  }
+  $( "select" ).change(Airfield);
+  
+</script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
