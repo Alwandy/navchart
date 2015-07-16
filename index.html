@@ -15,6 +15,7 @@ Thank you Verox for fixing it and cleaning!
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-combobox.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,6 +24,13 @@ Thank you Verox for fixing it and cleaning!
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-combobox.js" type="text/javascript"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
 </head>
 
 <body>
@@ -35,97 +43,98 @@ Thank you Verox for fixing it and cleaning!
                 <form>
                     <div class="form-group">
                         <label for="airbase">Airfield</label>
-                        <select class="form-control" id="airbaseDropdownSelector" name="airbase">
-                            <option>Select a airbase</option>
-                            <option value="0">Kunsan Airport</option>
-                            <option value="1">Chongju</option>
-                            <option value="2">Choongwon</option>
-                            <option value="3">Hoengsong</option>
-                            <option value="4">Kangnung</option>
-                            <option value="5">Kimhae</option>
-                            <option value="6">Kimpo</option>
-                            <option value="7">Kwangju</option>
-                            <option value="8">Osan</option>
-                            <option value="9">Pohang</option>
-                            <option value="10">Pusan</option>
-                            <option value="11">P'Yong'Taeg</option>
-                            <option value="12">Sachon</option>
-                            <option value="13">Seoul</option>
-                            <option value="14">Seosan</option>
-                            <option value="15">Sokcho</option>
-                            <option value="16">Suwon</option>
-                            <option value="17">Taegu</option>
-                            <option value="18">Yechon</option>
-                            <option value="19">Chongwon</option>
-                            <option value="20">Chunchon</option>
-                            <option value="21">Kumi</option>
-                            <option value="22">Mandumi</option>
-                            <option value="23">R103</option>
-                            <option value="24">R107</option>
-                            <option value="25">R110</option>
-                            <option value="26">R113</option>
-                            <option value="27">R217</option>
-                            <option value="28">R218</option>
-                            <option value="29">R222</option>
-                            <option value="30">R419</option>
-                            <option value="31">R505</option>
-                            <option value="32">R601</option>
-                            <option value="33">R605</option>
-                            <option value="34">Singal</option>
-                            <option value="35">Songwhan</option>
-                            <option value="36">Yongju</option>
-                            <option value="37">Kotar</option>
-                            <option value="38">Tactical Rng"</option>
-                            <option value="39">Fukuoka</option>
-                            <option value="40">Haeju</option>
-                            <option value="41">Hwangju</option>
-                            <option value="42">Hwangsuwon</option>
-                            <option value="43">Hyon-Ni</option>
-                            <option value="44">Iwon</option>
-                            <option value="45">Kaech'on</option>
-                            <option value="46">Koksan</option>
-                            <option value="47">Kuum-ni</option>
-                            <option value="48">Kwail</option>
-                            <option value="49">Manp'o</option>
-                            <option value="50">Mirim</option>
-                            <option value="51">Onch'on</option>
-                            <option value="52">Ongjin</option>
-                            <option value="53">Orang</option>
-                            <option value="54">Panghyon</option>
-                            <option value="55">Pukchang-up</option>
-                            <option value="56">Samjiyon</option>
-                            <option value="57">Sondok</option>
-                            <option value="58">Sunan</option>
-                            <option value="59">Sunch'on</option>
-                            <option value="60">T'aech'on</option>
-                            <option value="61">Taetan</option>
-                            <option value="62">Toksan</option>
-                            <option value="63">Uiju</option>
-                            <option value="64">Wonsan</option>
-                            <option value="65">Ayang-Ni HS</option>
-                            <option value="66">Hoeyang SE HS</option>
-                            <option value="67">Ich'on Airstrip</option>
-                            <option value="68">Kaech'on SW</option>
-                            <option value="69">Kilchu HS</option>
-                            <option value="70">Kojo HS</option>
-                            <option value="71">Koksan HS</option>
-                            <option value="72">Kwaksan</option>
-                            <option value="73">Kyongsong</option>
-                            <option value="74">Chuul"</option>
-                            <option value="75">Nuch'on-Ni</option>
-                            <option value="76">Okpyong-Ni</option>
-                            <option value="77">Panghyon</option>
-                            <option value="78">Pongsan</option>
-                            <option value="79">Sangwon HS</option>
-                            <option value="80">Sonch'on SW</option>
-                            <option value="81">Sugam-Ni</option>
-                            <option value="82">Taebukpo-Ri</option>
-                            <option value="83">Tangch'on HS</option>
-                            <option value="84">Yonghung HS</option>
-                            <option value="85">Liuhe</option>
-                            <option value="86">Shenyang</option>
-                            <option value="87">Nachodka</option>
-                        </select>
+
+                            <select class="combobox input-large form-control" id="airbaseDropdownSelector" name="airbase">
+                                <option value="" selected="selected">Select an airport</option>
+                                <option value="0">Kunsan Airport</option>
+                                <option value="1">Chongju</option>
+                                <option value="2">Choongwon</option>
+                                <option value="3">Hoengsong</option>
+                                <option value="4">Kangnung</option>
+                                <option value="5">Kimhae</option>
+                                <option value="6">Kimpo</option>
+                                <option value="7">Kwangju</option>
+                                <option value="8">Osan</option>
+                                <option value="9">Pohang</option>
+                                <option value="10">Pusan</option>
+                                <option value="11">P'Yong'Taeg</option>
+                                <option value="12">Sachon</option>
+                                <option value="13">Seoul</option>
+                                <option value="14">Seosan</option>
+                                <option value="15">Sokcho</option>
+                                <option value="16">Suwon</option>
+                                <option value="17">Taegu</option>
+                                <option value="18">Yechon</option>
+                                <option value="19">Chongwon</option>
+                                <option value="20">Chunchon</option>
+                                <option value="21">Kumi</option>
+                                <option value="22">Mandumi</option>
+                                <option value="23">R103</option>
+                                <option value="24">R107</option>
+                                <option value="25">R110</option>
+                                <option value="26">R113</option>
+                                <option value="27">R217</option>
+                                <option value="28">R218</option>
+                                <option value="29">R222</option>
+                                <option value="30">R419</option>
+                                <option value="31">R505</option>
+                                <option value="32">R601</option>
+                                <option value="33">R605</option>
+                                <option value="34">Singal</option>
+                                <option value="35">Songwhan</option>
+                                <option value="36">Yongju</option>
+                                <option value="37">Kotar</option>
+                                <option value="38">Tactical Rng"</option>
+                                <option value="39">Fukuoka</option>
+                                <option value="40">Haeju</option>
+                                <option value="41">Hwangju</option>
+                                <option value="42">Hwangsuwon</option>
+                                <option value="43">Hyon-Ni</option>
+                                <option value="44">Iwon</option>
+                                <option value="45">Kaech'on</option>
+                                <option value="46">Koksan</option>
+                                <option value="47">Kuum-ni</option>
+                                <option value="48">Kwail</option>
+                                <option value="49">Manp'o</option>
+                                <option value="50">Mirim</option>
+                                <option value="51">Onch'on</option>
+                                <option value="52">Ongjin</option>
+                                <option value="53">Orang</option>
+                                <option value="54">Panghyon</option>
+                                <option value="55">Pukchang-up</option>
+                                <option value="56">Samjiyon</option>
+                                <option value="57">Sondok</option>
+                                <option value="58">Sunan</option>
+                                <option value="59">Sunch'on</option>
+                                <option value="60">T'aech'on</option>
+                                <option value="61">Taetan</option>
+                                <option value="62">Toksan</option>
+                                <option value="63">Uiju</option>
+                                <option value="64">Wonsan</option>
+                                <option value="65">Ayang-Ni HS</option>
+                                <option value="66">Hoeyang SE HS</option>
+                                <option value="67">Ich'on Airstrip</option>
+                                <option value="68">Kaech'on SW</option>
+                                <option value="69">Kilchu HS</option>
+                                <option value="70">Kojo HS</option>
+                                <option value="71">Koksan HS</option>
+                                <option value="72">Kwaksan</option>
+                                <option value="73">Kyongsong</option>
+                                <option value="74">Chuul"</option>
+                                <option value="75">Nuch'on-Ni</option>
+                                <option value="76">Okpyong-Ni</option>
+                                <option value="77">Panghyon</option>
+                                <option value="78">Pongsan</option>
+                                <option value="79">Sangwon HS</option>
+                                <option value="80">Sonch'on SW</option>
+                                <option value="81">Sugam-Ni</option>
+                                <option value="82">Taebukpo-Ri</option>
+                                <option value="83">Tangch'on HS</option>
+                                <option value="84">Yonghung HS</option>
+                                <option value="85">Liuhe</option>
+                                <option value="86">Shenyang</option>
+                                <option value="87">Nachodka</option>
+                            </select>
                         <br>
                         <div id="warnBox" class="bg-warning" style="display: none;">
                             This airfield is not defined.
@@ -162,7 +171,7 @@ Thank you Verox for fixing it and cleaning!
         </div>
     </div>
     <center>
-        <footer>Designed and programmed by Julian Alwandy, thanks to bootstrap for their source template engine</footer>
+        <footer style="color: grey; font-style: italic;">Designed and programmed by Julian Alwandy, thanks to Bootstrap for their source template engine.</footer>
     </center>
     </div>
     <script>
@@ -259,7 +268,19 @@ Thank you Verox for fixing it and cleaning!
         ];
 
         function Airfield() {
-            var selectedAirport = airports[ $("#airbaseDropdownSelector").val() ];
+            var selectedid = $("#airbaseDropdownSelector").val()
+
+            if (selectedid == "")
+            {
+                // No airport selected, kill the results.
+                $("#warnBox").hide();
+                $("#mainbox").hide("slow");
+                return;
+            }
+            else
+            {
+                var selectedAirport = airports[ selectedid ];
+            }
 
             // Check we have an airport to use.
             if (selectedAirport == undefined) {
@@ -282,12 +303,9 @@ Thank you Verox for fixing it and cleaning!
             $("#mainbox").show("slow");
         }
 
+        $('.combobox').combobox();
         $("#airbaseDropdownSelector").change(Airfield);
     </script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
